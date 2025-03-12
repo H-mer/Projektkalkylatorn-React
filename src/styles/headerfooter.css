@@ -1,0 +1,294 @@
+/* Header */
+header {
+    /*background-color: #909090;*/
+    background-image: url("images/headerbakgrund7.jpg");
+    background-size: cover;
+    background-position: top center;
+    /*background-repeat: no-repeat;*/
+    /*mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);*/
+    padding: 1rem 2rem;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixera headern */
+    align-items: center;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 50px;
+}
+
+
+/* ---- Hamburgarmeny-knapp ---- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;/*#cedc00;*/
+    border-radius: 10px;
+    position: relative;
+    pointer-events: none;
+}
+
+.menu-toggle:hover {
+    background-color: #a0ac00;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(20px) scale(0.95);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+		transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-image: url("images/headerbakgrund7.jpg");
+    background-size: cover;
+    background-position: top center;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    padding: 18px 16px;
+    text-decoration: none;
+    font-size: 1.25rem;
+    display: block;
+    font-weight: bold;
+}
+
+.dropdown a:hover {
+    background-color: #cedc00;
+    color: white;
+}
+
+.dropdown-menu.show {
+    /*display: block;*/
+    visibility:visible;
+    opacity: 1;
+    transform: translatex(0) scale(1);
+}
+
+/* Huvudnavigering */
+#main-nav {
+    display: flex;
+    align-items: center;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+#main-nav ul li {
+    margin: 0 1rem;
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: #fff; /*#cedc00;*/
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+
+#main-nav ul li a:hover {
+    background-color: #cedc00;
+    /*color: white;*/
+}
+
+@media (max-width: 1200px) {
+    #main-nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    #main-nav ul li a {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Responsiv design */
+@media (max-width: 1024px) {
+    .header-container .logo img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 850px) {
+    #main-nav {
+        display: none;
+    }
+
+    .new-project-btn {
+        display: none; /* Hide the button on smaller screens */
+    }
+
+    #project-nav {
+        display: none; /* Hide project navigation on smaller screens */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-container {
+	max-width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container .logo img {
+        height: 30px;
+    }
+}
+
+/* Sidomeny för projekt */
+#project-nav {
+    background-color: #1e1e1e33;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    width: clamp(150px, 15%, 250px);
+    overflow-y: auto;
+    position: fixed;
+    top: 84px;
+    left: 0;
+    z-index: 2;
+    border-radius: 5px; /* Lägg till rundade kanter */
+    box-sizing: border-box;
+}
+
+/* Ensure the button is displayed by default */
+.new-project-btn {
+    background-color: #cedc00;
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 0.5rem;
+
+}
+
+.new-project-btn:hover {
+    background-color: #cddc0039;
+}
+
+/* Responsiv design för sidomenyn */
+@media (max-width: 1024px) {
+    #project-nav {
+        width: 150px;
+        top: 74px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsiv design för footer */
+@media (max-width: 600px /*768px*/) {
+    footer {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin: 0.5rem 0;
+    }
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #ed9b33;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
