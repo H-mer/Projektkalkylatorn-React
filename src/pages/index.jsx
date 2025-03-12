@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/bodystyle.css"; // Importera CSS-fil
+import LikeButton from '../components/likeButton';
 
 const IndexPage = () => {
     return (
@@ -31,8 +32,10 @@ const IndexPage = () => {
                             </video>
                         </div>
                         <p>Videon ovan och länken nedan är endast för att följa uppgiften och kommer plockas bort sedan!</p>
-                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Besök Google</a>
-                    </section>
+                        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Besök Google
+			</a>
+
+			<LikeButton initialCount={0} />  {/* Skickar in props */}                    </section>
                 </main>
             </div>
 
